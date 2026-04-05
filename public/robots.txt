@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://scriptkill.ai
+
+# Sitemaps
+Sitemap: https://scriptkill.ai/sitemap.xml
