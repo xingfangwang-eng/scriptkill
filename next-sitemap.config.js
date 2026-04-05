@@ -13,6 +13,8 @@ module.exports = {
     ],
   },
   sitemapSize: 1000,
+  outDir: './public',
+  generateIndexSitemap: false,
   additionalPaths: async (config) => {
     const paths = [];
     
