@@ -744,8 +744,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: PageProps) {
-  const keyword = keywords.find((k) => k.slug === params.slug);
+export default async function Page({ params }: PageProps) {
+  const unwrappedParams = await params;
+  const keyword = keywords.find((k) => k.slug === unwrappedParams.slug);
 
   if (!keyword) {
     return (
