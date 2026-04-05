@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://scriptkill.ai
+Host: https://scriptkill.wangdadi.xyz
 
 # Sitemaps
-Sitemap: https://scriptkill.ai/sitemap.xml
+Sitemap: https://scriptkill.wangdadi.xyz/sitemap.xml

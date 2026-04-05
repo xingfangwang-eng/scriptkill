@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect, useMemo } from 'react';
 import { Search, ChevronRight, Terminal, Code, Server, Database, Globe, Shield } from 'lucide-react';
 import keywords from '../../../data/keywords.json';
+import Breadcrumb from '../components/Breadcrumb';
 
 // 分类定义
 interface Category {
@@ -200,6 +201,14 @@ export default function SolutionsPage() {
 
       {/* 主内容 */}
       <div className="max-w-7xl mx-auto px-6 my-12">
+        {/* 面包屑导航 */}
+        <Breadcrumb 
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Solutions', href: '/solutions', active: true }
+          ]}
+        />
+        
         {/* 标题 */}
         <div className="mb-12">
           <h1 className="text-5xl font-black tracking-tighter text-slate-900 mb-4">
@@ -323,12 +332,7 @@ export default function SolutionsPage() {
         })};
       </div>
 
-      {/* 页脚 */}
-      <footer className="bg-white border-t border-slate-200 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center text-slate-600">
-          <p>ScriptKill - Kill the SaaS premium, host it yourself.</p>
-        </div>
-      </footer>
+
     </div>
   );
 }

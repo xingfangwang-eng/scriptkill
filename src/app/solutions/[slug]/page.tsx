@@ -8,6 +8,7 @@ import { PainPointA } from '../../components/PainPointA';
 import { PainPointB } from '../../components/PainPointB';
 import { PainPointC } from '../../components/PainPointC';
 import { CodeDisplay } from '../../components/CodeDisplay';
+import Breadcrumb from '../../components/Breadcrumb';
 
 interface SemanticContext {
   type: 'tech' | 'cost' | 'env';
@@ -850,31 +851,13 @@ export default function Page({ params }: PageProps) {
           {/* 主要内容 */}
           <main className="lg:col-span-8 lg:order-2">
             {/* 面包屑导航 */}
-            <nav className="mb-8" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-4">
-                <li>
-                  <a href="/" className="text-slate-600 hover:text-slate-900 transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <div className="flex items-center space-x-2">
-                    <ChevronRight className="h-4 w-4 text-slate-400" />
-                    <a href="/solutions" className="text-slate-600 hover:text-slate-900 transition-colors">
-                      Solutions
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center space-x-2">
-                    <ChevronRight className="h-4 w-4 text-slate-400" />
-                    <span className="text-slate-900 font-medium">
-                      {keyword.title}
-                    </span>
-                  </div>
-                </li>
-              </ol>
-            </nav>
+            <Breadcrumb 
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Solutions', href: '/solutions' },
+                { label: keyword.title, href: `/solutions/${keyword.slug}`, active: true }
+              ]}
+            />
 
             {/* Hero 区 */}
             {pageDNA.heroType === 'A' ? (
@@ -1041,12 +1024,7 @@ export default function Page({ params }: PageProps) {
         </div>
       </div>
 
-      {/* 页脚 */}
-      <footer className="bg-white border-t border-slate-200 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center text-slate-600">
-          <p>ScriptKill - Kill the SaaS premium, host it yourself.</p>
-        </div>
-      </footer>
+
     </div>
   );
 }

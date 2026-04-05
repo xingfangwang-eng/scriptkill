@@ -2,7 +2,7 @@ const keywords = require('./data/keywords.json');
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://scriptkill.ai',
+  siteUrl: 'https://scriptkill.wangdadi.xyz',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -12,6 +12,7 @@ module.exports = {
       },
     ],
   },
+  sitemapSize: 1000,
   additionalPaths: async (config) => {
     const paths = [];
     

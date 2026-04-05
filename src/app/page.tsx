@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Terminal, Play, Loader2, Copy, Check, Download } from "lucide-react";
+import Link from "next/link";
+import { Terminal, Play, Loader2, Copy, Check, Download, ArrowRight } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Typewriter from "./components/Typewriter";
@@ -168,6 +169,14 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        {/* Browse All Alternatives Button */}
+        <div className="mt-8 text-center">
+          <Link href="/solutions" className="inline-flex items-center space-x-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors">
+            <span>Browse All Alternatives</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </main>
 
       {/* 底部代码展示区域 */}
@@ -269,6 +278,30 @@ export default function Home() {
           </div>
         )}
       </footer>
+
+      {/* Quick Access Section */}
+      <section className="w-full max-w-[1200px] px-4 py-12 border-t border-slate-200">
+        <div className="mb-6">
+          <h3 className="text-sm font-medium text-slate-500 mb-4">Quick Access</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Automation</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Docker</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Python</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Self-hosting</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">SaaS Alternatives</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Open Source</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Deployment</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Containers</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Scripting</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Cloud</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">DevOps</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Infrastructure</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Code Generation</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">Serverless</Link>
+            <Link href="/solutions" className="text-xs text-slate-500 hover:text-blue-600 transition-colors">API</Link>
+          </div>
+        </div>
+      </section>
 
       {/* 日志装饰 */}
       <LogDecorator />
